@@ -1,0 +1,50 @@
+/*
+This is fun excercise to demostrate Linear Search. 
+Developer - Shyanaka Rama
+*/
+#include <iostream> 
+using namespace std;
+
+int linearsearch (int[], int, int);
+
+
+int main()
+{
+    const int numbers = 10;
+    int array[numbers];
+    int searchnum;
+    
+    cout<<"Please enter 10 numbers that you want test Linear Search : "<<endl;
+    for(int count = 0; count<numbers; count++)
+    {
+    cin >> array[count];
+    }
+    cout << "What number you want find from the list : "<<endl;
+    cin >> searchnum;
+    
+    int result = linearsearch (array, numbers, searchnum );
+    
+    if(result>0)
+    {
+        cout<<"The number you entered "<<array[result]<<" is in the list."<<endl;
+        cout<<"Position in the list is "<<result+1 << endl;
+    }
+    else
+        cout << "The number you entered is not in the list "<<endl;
+        
+
+}
+
+int linearsearch (int array [], int numbers, int searchnum )
+{
+    for(int count = 0; count<numbers ; count++)
+    {
+        if(searchnum==array[count])
+        {
+            return count;
+        }
+    }
+    
+    return -1;
+    
+}
